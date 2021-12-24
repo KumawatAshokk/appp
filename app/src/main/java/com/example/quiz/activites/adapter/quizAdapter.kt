@@ -1,6 +1,7 @@
 package com.example.quiz.activites.adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quiz.R
 import com.example.quiz.activites.model.quiz
+import com.example.quiz.activites.utils.colourPicker
+import com.example.quiz.activites.utils.iconPicker
 import java.security.AccessControlContext
 
 class quizAdapter (val context: Context, val quizess:List<quiz>):
@@ -29,7 +32,8 @@ class quizAdapter (val context: Context, val quizess:List<quiz>):
 
     override fun onBindViewHolder(holder: QuizViewHolder, position: Int) {
         holder.textviewTitle.text=quizess[position].title
-        holder.CardContainer.setBackgroundColor(R.color.purple_700)
+        holder.CardContainer.setCardBackgroundColor(Color.parseColor(colourPicker.getcolor()))
+        holder.imageCard.setImageResource(iconPicker.geticon())
 
 
     }
