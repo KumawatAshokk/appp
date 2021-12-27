@@ -3,32 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="160dp"
     android:background="@color/purple_500"
     android:id="@+id/card_container"
     android:layout_margin="10dp"
+    android:elevation="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginLeft="10dp"
+    app:cardBackgroundColor="@color/purple_500"
     >
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:gravity="center"
         >
 
         <ImageView
             android:id="@+id/home_card_image"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+
+            android:layout_centerInParent="true"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11-12-21"
-            android:layout_alignBottom="@id/home_card_image"
-            android:layout_centerHorizontal="true"
+            android:layout_below="@id/home_card_image"
 
+            android:layout_centerHorizontal="true"
+            android:text="11-12-21"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
             />
 
     </RelativeLayout>

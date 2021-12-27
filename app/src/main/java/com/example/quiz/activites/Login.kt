@@ -23,7 +23,7 @@ class login : AppCompatActivity() {
         firebaseAuth= FirebaseAuth.getInstance()
 
 
-        var intet1= Intent(this, signup::class.java)
+        var intet1= Intent(this, question_option::class.java)
         signUpbtn.setOnClickListener {
             startActivity(intet1)
         }

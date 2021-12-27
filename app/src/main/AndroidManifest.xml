@@ -12,14 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz">
         <activity
-            android:name=".activites.question_option"
+            android:name=".activites.resultActivity"
             android:exported="false" />
+        <activity
+            android:name=".activites.question_option"
+            android:exported="false"
+            android:theme="@style/Theme.Quiz1"></activity>
         <activity
             android:name=".activites.homeScreen"
             android:exported="false" />
         <activity android:name=".activites.signup" />
         <activity android:name=".activites.login" />
-        <activity android:name=".activites.MainActivity">
+        <activity
+            android:name=".activites.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

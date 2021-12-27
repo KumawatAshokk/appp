@@ -1,14 +1,11 @@
 package com.example.quiz.activites.model
 
-class question{
-    var descripon:String=""
-    var question:String=""
-    var option1:String=""
-    var option2:String=""
-    var option3:String=""
-    var option4:String=""
-    var answer:String=""
-    var userAnswer:String=""
-
-
-}
+data class Question
+    (  var description:String="",
+       var option1:String="",
+       var option2:String="",
+       var option3:String="",
+       var option4:String="",
+       var answer:String="",
+       var userAnswer:String=""
+)
