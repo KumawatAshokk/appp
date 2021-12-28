@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz">
         <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".activites.resultActivity"
             android:exported="false" />
         <activity
             android:name=".activites.question_option"
             android:exported="false"
-            android:theme="@style/Theme.Quiz1"></activity>
+            android:theme="@style/Theme.Quiz1" />
         <activity
             android:name=".activites.homeScreen"
             android:exported="false" />

@@ -6,4 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".activites.resultActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#2E4053"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/trophy" />
+
+        <TextView
+            android:id="@+id/score_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your score: "
+            android:textAlignment="center"
+            android:textColor="#FF5722"
+            android:textSize="24sp"
+
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/answerTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="TextView"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_margin="20dp"
+        />
+
+    <Button
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="15dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

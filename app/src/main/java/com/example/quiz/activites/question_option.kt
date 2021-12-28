@@ -15,6 +15,7 @@ import com.example.quiz.activites.adapter.optionAdapter
 import com.example.quiz.activites.model.Question
 import com.example.quiz.activites.model.quiz
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_question_option.*
 import java.util.function.LongFunction
 
@@ -26,6 +27,7 @@ class question_option : AppCompatActivity() {
     lateinit var prvBtn: Button
     lateinit var nxtBtn: Button
     lateinit var submitBtn: Button
+    var score:Int=0
     var index=1
     lateinit var recyleviewOption:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +38,9 @@ class question_option : AppCompatActivity() {
         prvBtn = findViewById(R.id.preBtn)
         nxtBtn = findViewById(R.id.nextbtn)
         submitBtn = findViewById(R.id.submit_btn)
-
+        prvBtn.visibility= View.GONE
+        nextbtn.visibility= View.GONE
+        submitBtn.visibility= View.GONE
         setUpfirestore()
         setupEventListner()
 
@@ -54,25 +58,21 @@ class question_option : AppCompatActivity() {
             bindview()
         }
         submitBtn.setOnClickListener {
-
             Log.d("submitbtn",Question1.toString())
+            val intent= Intent(this, resultActivity::class.java)
+            var json:String=Gson().toJson(quizzs!![0])
+            intent.putExtra("jsondata",json)
+            startActivity(intent)
+
         }
 
     }
 
     private fun setUpfirestore() {
-//
-
-        Toast.makeText(this, Question1?.size.toString(), Toast.LENGTH_SHORT).show()
-
-
-
-
-
 
         val firestore:FirebaseFirestore= FirebaseFirestore.getInstance()
         var date: String? =intent.getStringExtra("Date")
-        Toast.makeText(this, date, Toast.LENGTH_SHORT).show()
+
 
         if (date!=null) {
             firestore.collection("Quiz").whereEqualTo("Title",date)
@@ -83,7 +83,7 @@ class question_option : AppCompatActivity() {
                         quizzs=it.toObjects(quiz::class.java)
                         Question1= quizzs!![0].Question
                         bindview()
-                        Log.d("setup fire",it.toObjects(quiz::class.java).toString())
+
                     }
                      else{
                         Toast.makeText(this, "else", Toast.LENGTH_SHORT).show()
@@ -93,9 +93,9 @@ class question_option : AppCompatActivity() {
     }
 
     private fun bindview( ) {
-        prvBtn.visibility= View.GONE
-        nextbtn.visibility= View.GONE
-        submitBtn.visibility= View.GONE
+
+
+
 
         if (index==1) {
 

@@ -2,21 +2,22 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
     android:background="@color/purple_500"
     android:id="@+id/card_container"
-    android:layout_margin="10dp"
     android:elevation="10dp"
     app:cardCornerRadius="10dp"
-    android:layout_marginLeft="10dp"
+
     app:cardBackgroundColor="@color/purple_500"
+
     >
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_gravity="center"
         >
 
         <ImageView
@@ -24,12 +25,13 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
 
-            android:layout_centerInParent="true"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+
+            />
 
         <TextView
             android:id="@+id/textTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/home_card_image"
 
@@ -38,9 +40,10 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="14sp"
+            android:textAlignment="center"
             />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>

@@ -36,6 +36,7 @@ class optionAdapter(val context:Context, val question: Question):
 
             holder.itemView.setBackgroundResource(R.drawable.option_select_border)
 
+
         }
         else{
 
